@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --main-color: #0b0d17;
+  --second-color: #d0d6f9;
+  --white-color: #fff;
+}
+
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+
+body {
+  font-family: "Bellefair", serif;
+  background-color: var(--main-color);
+}

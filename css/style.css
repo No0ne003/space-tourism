@@ -67,6 +67,7 @@
   letter-spacing: 0.16875rem;
   text-transform: uppercase;
   position: relative;
+  transition: .3;
 }
 .primary-navigation li.active::before {
   content: "";

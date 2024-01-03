@@ -7,13 +7,17 @@
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
-
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   font-family: "Bellefair", serif;
   background-color: var(--main-color);
-
   overflow-x: hidden;
+  zoom: .8;
+
   display: grid;
   grid-template-rows: min-content 1fr;
 }
@@ -48,6 +52,7 @@ h3 {
 }
 h4 {
   color: var(--white-color);
+  font-family: "Bellefair", serif;
   font-size: 32px;
   font-weight: 400;
   line-height: normal;

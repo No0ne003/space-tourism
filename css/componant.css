@@ -9,8 +9,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
 
 body {
+  margin: 0;
   font-family: "Bellefair", serif;
   background-color: var(--main-color);
+
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+a:hover {
+  color: var(--white-color);
 }
 h1 {
   color: var(--white-color);
@@ -70,4 +85,20 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 32px; /* 177.778% */
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

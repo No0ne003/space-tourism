@@ -127,7 +127,7 @@
     position: absolute;
     z-index: 9999;
     background-color: transparent;
-    background: url("/assets/shared/icon-hamburger.svg");
+    background: url("../assets/shared/icon-hamburger.svg");
     background-repeat: no-repeat;
     width: 2rem;
     border: 0;
@@ -137,7 +137,7 @@
     display: block;
   }
   .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url("/assets/shared/icon-close.svg");
+    background-image: url("../assets/shared/icon-close.svg");
   }
 }
 @media (min-width: 35em) and (max-width: 58em) {

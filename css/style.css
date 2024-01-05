@@ -43,7 +43,6 @@
   letter-spacing: 0.16875rem;
   text-transform: uppercase;
   position: relative;
-  transition: 0.3;
 }
 .primary-navigation li.active::before {
   content: "";
@@ -459,3 +458,169 @@
   }
 }
 /* End main destination */
+/* Start main crew */
+.primary-header.crew {
+  margin: 0;
+  margin-bottom: 30px;
+}
+.primary-content.crew {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+  min-height: 0;
+  padding: 0;
+  height: fit-content;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+.primary-content.crew section:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 650px;
+}
+.primary-content.crew section:first-child h5 {
+  display: inline-flex;
+  gap: 1.75rem;
+  font-size: 1.67rem;
+  margin: 10px 0;
+  width: 100%;
+  justify-content: flex-start;
+  text-transform: uppercase;
+}
+.primary-content.crew section:first-child h5 span {
+  opacity: 0.25;
+}
+.primary-content.crew section:first-child .info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 15%;
+}
+.primary-content.crew section:first-child .info-text h4 {
+  opacity: 0.5042;
+  line-height: normal;
+}
+.primary-content.crew section:first-child .info-text h3 {
+  font-size: 3.5rem;
+}
+.primary-content.crew section:first-child .info-text p {
+  color: var(--second-color);
+  margin-top: 40px;
+  width: 90%;
+}
+.primary-content.crew section:first-child .nav-button {
+  display: flex;
+  width: 100%;
+  margin-top: 15%;
+}
+.primary-content.crew section:first-child .nav-button ul {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: flex-start;
+}
+.primary-content.crew section:first-child .nav-button ul li {
+  width: 15px;
+  height: 15px;
+  background: #5d5f64;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.primary-content.crew section:first-child .nav-button ul li.active {
+  background-color: var(--white-color);
+}
+.primary-content.crew section:first-child .nav-button ul li:not(.active):hover {
+  background: #ffffff67;
+}
+.primary-content.crew section:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.primary-content.crew section:last-child img {
+  width: 35.5045rem;
+  height: 44.5rem;
+}
+@keyframes toTop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8) translateY(-20%);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.8) translateY(200%);
+    opacity: 0;
+  }
+  90% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .primary-header.crew {
+    margin: 0;
+  }
+  .primary-content.crew {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    padding-top: 20%;
+  }
+  .primary-content.crew section:first-child {
+    grid-row-start: 2;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(151, 151, 151, 0.5);
+    padding: 0;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-self: flex-start;
+    height: 250px;
+    padding-top: 10px;
+    width: 500px;
+    position: relative;
+  }
+  .primary-content.crew section:last-child {
+    grid-column: 1;
+  }
+  .primary-content.crew section:first-child {
+    text-align: center;
+  }
+  .primary-content.crew section:first-child h5 {
+    position: absolute;
+    font-size: 1.2rem;
+    top: -200%;
+    justify-content: center;
+  }
+  .primary-content.crew section:first-child .info-text {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .primary-content.crew section:first-child .info-text h3 {
+    font-size: 2.5rem;
+  }
+  .primary-content.crew section:first-child .nav-button {
+    margin: 0;
+    justify-content: center;
+    padding-bottom: 50px; 
+  }
+  .primary-content.crew section:first-child .nav-button ul {
+    gap: 30px;
+  }
+  .primary-content.crew section:last-child {
+    height: 350px;
+    width: 350px;
+  }
+  .primary-content.crew section:last-child img {
+    transform: translateX(0);
+    height: 100%;
+    width: 100%;
+  }
+}
+/* End main crew */

@@ -75,7 +75,7 @@ destinationLi.forEach((e) => {
         "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.";
       h1Element.innerHTML = "MOON";
       distance.innerHTML = "384,400 km";
-      travelTime.innerHTML = '3 DAYS';
+      travelTime.innerHTML = "3 DAYS";
     }
     if (!image.style.animation) {
       // Check if the animation is already in progress
@@ -85,6 +85,75 @@ destinationLi.forEach((e) => {
       }, 500);
       // Add animation
       image.style.animation = "leaving 1.3s";
+
+      // Listen for the animationend event
+      image.addEventListener("animationend", function onAnimationEnd() {
+        // Reset the animation property
+        image.style.animation = "";
+        // Remove the event listener to avoid potential memory leaks
+        image.removeEventListener("animationend", onAnimationEnd);
+      });
+    }
+  });
+});
+
+//* Switch Crew
+const crewLi = document.querySelectorAll(
+  ".primary-content.crew section:first-child .nav-button ul li"
+);
+
+// Remove and add active class
+crewLi.forEach((e) => {
+  e.addEventListener("click", (el) => {
+    // Remove active class
+    el.target.parentElement.querySelectorAll(".active").forEach((element) => {
+      element.classList.remove("active");
+    });
+    // Add active class
+    el.target.classList.add("active");
+  });
+});
+
+crewLi.forEach((e) => {
+  e.addEventListener("click", (el) => {
+    const dataImage = el.target.getAttribute("data-image");
+    const dataLi = el.target.getAttribute("data-name");
+    const image = document.querySelector(
+      ".primary-content.crew section:last-child img"
+    );
+    const pElement = document.querySelector(
+      ".primary-content.crew section:first-child .info-text p"
+    );
+    const h3Element = document.querySelector(
+      ".primary-content.crew section:first-child .info-text h3"
+    );
+
+    // change TEXT
+    if (dataLi === "DOUGLAS HURLEY") {
+      pElement.innerHTML =
+        "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.";
+      h3Element.innerHTML = "MARK SHUTTLEWORTH";
+    } else if (dataLi === "MARK SHUTTLEWORTH") {
+      pElement.innerHTML =
+        "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.";
+      h3Element.innerHTML = "MARK SHUTTLEWORTH";
+    } else if (dataLi === "VICTOR GLOVER") {
+      pElement.innerHTML =
+        "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.";
+      h3Element.innerHTML = "VICTOR GLOVER";
+    } else if (dataLi === "ANOUSHEH ANSARI") {
+      pElement.innerHTML =
+        "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.";
+      h3Element.innerHTML = "ANOUSHEH ANSARI";
+    }
+    if (!image.style.animation) {
+      // Check if the animation is already in progress
+      setTimeout(function () {
+        // Change wallpaper after animation ends
+        image.src = dataImage;
+      }, 550);
+      // Add animation
+      image.style.animation = "toTop 1.2s ease-in-out";
 
       // Listen for the animationend event
       image.addEventListener("animationend", function onAnimationEnd() {

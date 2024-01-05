@@ -15,8 +15,8 @@ body {
   margin: 0;
   font-family: "Bellefair", serif;
   background-color: var(--main-color);
-  overflow-x: hidden;
-  zoom: .8;
+  overflow: hidden;
+  zoom: 0.8;
 
   display: grid;
   grid-template-rows: min-content 1fr;
@@ -90,6 +90,15 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 32px; /* 177.778% */
+}
+.nativeText {
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.16875rem;
 }
 
 .flex {

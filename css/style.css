@@ -608,7 +608,7 @@
   .primary-content.crew section:first-child .nav-button {
     margin: 0;
     justify-content: center;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
   }
   .primary-content.crew section:first-child .nav-button ul {
     gap: 30px;
@@ -624,3 +624,156 @@
   }
 }
 /* End main crew */
+/* Start main technology */
+.primary-header.technology {
+  margin-bottom: 100px;
+}
+.primary-content.technology {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10%;
+  grid-template-columns: 1fr 1fr;
+}
+.primary-content.technology section:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-left: 20%;
+}
+.primary-content.technology section:first-child h5 {
+  display: inline-flex;
+  gap: 1.75rem;
+  font-size: 1.67rem;
+  margin: 10px 0;
+}
+.primary-content.technology section:first-child h5 span {
+  opacity: 0.25;
+}
+.primary-content.technology section:first-child > div {
+  display: flex;
+}
+.primary-content.technology section:first-child > div .steps {
+  padding-right: 60px;
+}
+.primary-content.technology section:first-child > div .steps ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.primary-content.technology section:first-child > div .steps ul li {
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white-color);
+  text-align: center;
+  font-family: "Bellefair", serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.125rem;
+  border: 1px solid #ffffff7a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.primary-content.technology section:first-child > div .steps ul li.active {
+  background: var(--white-color);
+  color: var(--main-color);
+}
+.primary-content.technology
+  section:first-child
+  > div
+  .steps
+  ul
+  li:not(.active):hover {
+  border-color: var(--white-color);
+}
+.primary-content.technology section:first-child > div .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.primary-content.technology section:first-child > div .info p:first-child {
+  color: var(--second-color);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.16875rem;
+}
+.primary-content.technology section:first-child > div .info h3 {
+  padding-bottom: 10px;
+}
+.primary-content.technology section:first-child > div .info p:last-child {
+  color: var(--second-color);
+  font-size: 1.25rem;
+}
+.primary-content.technology section:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+@keyframes disipir {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .primary-content.technology {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+  }
+  .primary-content.technology section:first-child {
+    margin: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .primary-content.technology section:first-child h5 {
+    position: absolute;
+    top: -80px;
+    width: 80%;
+    margin: 0;
+  }
+  .primary-content.technology section:first-child > div {
+    flex-direction: column;
+    text-align: center;
+  }
+  .primary-content.technology section:first-child > div .steps {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .primary-content.technology section:first-child > div .steps ul {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  .primary-content.technology section:first-child > div .info p:first-child {
+    font-size: 0.875rem;
+  }
+  .primary-content.technology section:first-child > div .info h3 {
+    font-size: 2rem;
+  }
+  .primary-content.technology section:first-child > div .info p:last-child {
+    font-size: 0.9375rem;
+  }
+  .primary-content.technology section:last-child {
+    grid-row: 1;
+  }
+  .primary-content.technology section:last-child img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+}
+/* End main technology */

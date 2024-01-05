@@ -165,3 +165,69 @@ crewLi.forEach((e) => {
     }
   });
 });
+
+//* Switch technology
+const technologyLi = document.querySelectorAll(
+  ".primary-content.technology section:first-child > div .steps ul li"
+);
+
+// Remove and add active class
+technologyLi.forEach((e) => {
+  e.addEventListener("click", (el) => {
+    // Remove active class
+    el.target.parentElement.querySelectorAll(".active").forEach((element) => {
+      element.classList.remove("active");
+    });
+    // Add active class
+    el.target.classList.add("active");
+  });
+});
+
+// change Images
+technologyLi.forEach((e) => {
+  e.addEventListener("click", (el) => {
+    const dataImage = el.target.getAttribute("data-image");
+    const dataLi = el.target.getAttribute("data-name");
+    const image = document.querySelector(
+      ".primary-content.technology section:last-child img"
+    );
+    const pElement = document.querySelector(
+      ".primary-content.technology section:first-child > div .info p:last-child"
+    );
+    const h3Element = document.querySelector(
+      ".primary-content.technology section:first-child > div .info h3"
+    );
+
+    // change TEXT
+    if (dataLi === "LAUNCH VEHICLE") {
+      pElement.innerHTML =
+        "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!";
+      h3Element.innerHTML = "LAUNCH VEHICLE";
+    } else if (dataLi === "SPACEPORT") {
+      pElement.innerHTML =
+        "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.";
+      h3Element.innerHTML = "SPACEPORT";
+    } else if (dataLi === "SPACE CAPSULE") {
+      pElement.innerHTML =
+        "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.";
+      h3Element.innerHTML = "SPACE CAPSULE";
+    }
+    // Check if the animation is already in progress
+    if (!image.style.animation) {
+      // Change wallpaper after animation ends
+      setTimeout(() => {
+        image.src = dataImage;
+      }, 500);
+      // Add animation
+      image.style.animation = "disipir .8s linear";
+
+      // Listen for the animationend event
+      image.addEventListener("animationend", function onAnimationEnd() {
+        // Reset the animation property
+        image.style.animation = "";
+        // Remove the event listener to avoid potential memory leaks
+        image.removeEventListener("animationend", onAnimationEnd);
+      });
+    }
+  });
+});
